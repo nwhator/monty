@@ -13,11 +13,11 @@ void printString(stack_t **top, unsigned int line)
 	current = *top;
 	while (current)
 	{
-		if (current->num > 127 || current->num <= 0)
+		if (current->n > 127 || current->n <= 0)
 		{
 			break;
 		}
-		printf("%c", current->num);
+		printf("%c", current->n);
 		current = current->next;
 	}
 	printf("\n");

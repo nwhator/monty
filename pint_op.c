@@ -15,5 +15,5 @@ void pint_op(stack_t **top, unsigned int line)
 		free_list(*top);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d\n", (*top)->num);
+	printf("%d\n", (*top)->n);
 }

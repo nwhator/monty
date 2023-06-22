@@ -3,10 +3,10 @@
 /**
  * insertNode - Insert a node at the beginning of the linked list
  * @top: Pointer to the head of the linked list
- * @num: Value to be stored in the new node
+ * @n: Value to be stored in the new node
 */
 
-void insertNode(stack_t **top, int num)
+void insertNode(stack_t **top, int n)
 {
 	stack_t *new, *sum;
 
@@ -19,7 +19,7 @@ void insertNode(stack_t **top, int num)
 	}
 	if (sum)
 		sum->prev = new;
-	new->num = num;
+	new->n = n;
 	new->next = *top;
 	new->prev = NULL;
 	*top = new;

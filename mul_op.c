@@ -25,8 +25,8 @@ void mul_op(stack_t **top, unsigned int line)
 		exit(EXIT_FAILURE);
 	}
 	current = *top;
-	sum = current->next->num * current->num;
-	current->next->num = sum;
+	sum = current->next->n * current->n;
+	current->next->n = sum;
 	*top = current->next;
 	free(current);
 }

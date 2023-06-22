@@ -25,7 +25,7 @@ void swap_op(stack_t **top, unsigned int line)
 		exit(EXIT_FAILURE);
 	}
 	current = *top;
-	sum = current->num;
-	current->num = current->next->num;
-	current->next->num = sum;
+	sum = current->n;
+	current->n = current->next->n;
+	current->next->n = sum;
 }

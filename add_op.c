@@ -20,14 +20,14 @@ void add_top(stack_t **top, unsigned int line)
 	if (len < 2)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line);
-		fclose(interpret.new_file);
+		fclose(interpret.file);
 		free(interpret.content);
 		free_list(*top);
 		exit(EXIT_FAILURE);
 	}
 	current = *top;
-	sum = current->num + current->next->num;
-	current->next->num = sum;
+	sum = current->n + current->next->n;
+	current->next->n = sum;
 	*top = current->next;
 	free(current);
 }

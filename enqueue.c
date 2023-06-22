@@ -15,10 +15,10 @@ void queue_op(stack_t **top, unsigned int line)
 /**
  * enqueue - Adds an element to the queue
  * @top: Pointer to the front of the queue
- * @num: Element to be added
+ * @n: Element to be added
  * Return: no return
 */
-void enqueue(stack_t **top, int num)
+void enqueue(stack_t **top, int n)
 {
 	stack_t *new, *sum;
 
@@ -28,7 +28,7 @@ void enqueue(stack_t **top, int num)
 	{
 		printf("Error\n");
 	}
-	new->num = num;
+	new->n = n;
 	new->next = NULL;
 	if (sum)
 	{

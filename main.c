@@ -8,8 +8,8 @@ bus_t interpret = {NULL, NULL, NULL, 0};
 */
 int main(int argc, char *argv[])
 {
-	char *data;
-	new_file *new_file;
+	char *content;
+	FILE *new_file;
 	size_t size = 0;
 	ssize_t read_line = 1;
 	stack_t *new_stack = NULL;
@@ -29,15 +29,15 @@ int main(int argc, char *argv[])
 	}
 	while (read_line > 0)
 	{
-		data = NULL;
-		read_line = getline(&data, &size, new_file);
-		interpret.data = data;
+		content = NULL;
+		read_line = getline(&content, &size, new_file);
+		interpret.content = content;
 		line++;
 		if (read_line > 0)
 		{
-			executeMonty(data, &new_stack, line, new_file);
+			executeMonty(content, &new_stack, line, new_file);
 		}
-		free(data);
+		free(content);
 	}
 	free_list(new_stack);
 	fclose(new_file);

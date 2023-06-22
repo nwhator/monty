@@ -8,7 +8,7 @@
 
 void f_push(stack_t **top, unsigned int line)
 {
-	int num, j = 0, custom_flag = 0;
+	int n, j = 0, custom_flag = 0;
 
 	if (interpret.arg)
 	{
@@ -36,9 +36,9 @@ void f_push(stack_t **top, unsigned int line)
 		free_list(*top);
 		exit(EXIT_FAILURE);
 	}
-	num = atoi(interpret.arg);
+	n = atoi(interpret.arg);
 	if (interpret.lifi == 0)
-		insertNode(top, num);
+		insertNode(top, n);
 	else
-		enqueue(top, num);
+		enqueue(top, n);
 }

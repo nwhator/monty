@@ -19,7 +19,7 @@ void pchar_op(stack_t **top, unsigned int line)
 		free_list(*top);
 		exit(EXIT_FAILURE);
 	}
-	if (current->num > 127 || current->num < 0)
+	if (current->n > 127 || current->n < 0)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line);
 		fclose(interpret.file);
@@ -27,5 +27,5 @@ void pchar_op(stack_t **top, unsigned int line)
 		free_list(*top);
 		exit(EXIT_FAILURE);
 	}
-	printf("%c\n", current->num);
+	printf("%c\n", current->n);
 }

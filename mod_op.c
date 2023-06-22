@@ -27,7 +27,7 @@ void mod_op(stack_t **top, unsigned int line)
 		exit(EXIT_FAILURE);
 	}
 	current = *top;
-	if (current->num == 0)
+	if (current->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line);
 		fclose(interpret.file);
@@ -35,8 +35,8 @@ void mod_op(stack_t **top, unsigned int line)
 		free_list(*top);
 		exit(EXIT_FAILURE);
 	}
-	sum = current->next->num % current->num;
-	current->next->num = sum;
+	sum = current->next->n % current->n;
+	current->next->n = sum;
 	*top = current->next;
 	free(current);
 }

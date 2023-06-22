@@ -21,8 +21,8 @@ void sub_op(stack_t **top, unsigned int line)
 		exit(EXIT_FAILURE);
 	}
 	sum = *top;
-	dif = sum->next->num - sum->num;
-	sum->next->num = dif;
+	dif = sum->next->n - sum->n;
+	sum->next->n = dif;
 	*top = sum->next;
 	free(sum);
 }

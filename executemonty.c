@@ -45,7 +45,7 @@ int executeMonty(char *input, stack_t **data, unsigned int line, FILE *file)
 	if (op && operations[i].opcode == NULL)
 	{ fprintf(stderr, "L%d: unknown instruction %s\n", line, op);
 		fclose(file);
-		free(content);
+		free(input);
 		free_list(*data);
 		exit(EXIT_FAILURE); }
 	return (1);
