@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	new_file = fopen(argv[1], "r");
-	interpret.new_file = new_file;
+	interpret.file = new_file;
 	if (!new_file)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
