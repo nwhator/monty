@@ -6,20 +6,21 @@
  */
 void rotate_op(stack_t **top,  __attribute__((unused)) unsigned int line)
 {
-	stack_t *temp = *top, *sum;
+	stack_t *temp = *top, *sum; /* Pointers used for temporary storage,swapping */
 
 	if (*top == NULL || (*top)->next == NULL)
 	{
-		return;
+		return; /* stack is empty or contains only one element */
+		/* no need to perform the swap */
 	}
-	sum = (*top)->next;
-	sum->prev = NULL;
+	sum = (*top)->next; /* Store second node of stack in 'sum' */
+	sum->prev = NULL; /* Set 'prev' pointer of 'sum' to NULL */
 	while (temp->next != NULL)
 	{
-		temp = temp->next;
+		temp = temp->next; /* Traverse to last node of stack using 'temp' */
 	}
 	temp->next = *top;
-	(*top)->next = NULL;
-	(*top)->prev = temp;
-	(*top) = sum;
+	(*top)->next = NULL; /* Set 'next' pointer of new top node to NULL */
+	(*top)->prev = temp; /* Set 'prev' pointer of new top node to 'temp' */
+	(*top) = sum; /* Update top pointer to point to new top node */
 }
