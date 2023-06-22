@@ -7,26 +7,26 @@
 */
 void mul_op(stack_t **top, unsigned int line)
 {
-	stack_t *current;
+	stack_t *current; /* Pointer to traverse stack */
 	int len = 0, sum;
 
-	current = *top;
+	current = *top; /* Set 'current' to point to the top of stack */
 	while (current)
 	{
-		current = current->next;
-		len++;
+		current = current->next; /* Move 'current' to next node in stack */
+		len++; /* Increment the length counter */
 	}
 	if (len < 2)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line);
-		fclose(interpret.file);
-		free(interpret.content);
-		free_list(*top);
-		exit(EXIT_FAILURE);
+		fclose(interpret.file); /* Close the file */
+		free(interpret.content); /* Free memory allocated for line content */
+		free_list(*top); /* Free memory allocated for stack */
+		exit(EXIT_FAILURE); /* rid program with a failure status */
 	}
-	current = *top;
+	current = *top; /* Reset 'current' to point to top of stack */
 	sum = current->next->n * current->n;
 	current->next->n = sum;
-	*top = current->next;
-	free(current);
+	*top = current->next; /* Update top of stack to second element */
+	free(current); /* Free memory allocated for previous top element */
 }

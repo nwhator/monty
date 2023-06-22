@@ -6,6 +6,6 @@
  */
 void nop_op(stack_t **top, unsigned int line)
 {
-	(void) line;
-	(void) top;
+	(void) line; /* Silence ompiler warning about an unused variable 'line' */
+	(void) top; /* Silence the compiler warning about an unused variable 'top' */
 }
