@@ -59,7 +59,7 @@ extern bus_t interpret;
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
 char  *clean_line(char *content);
-void f_push(stack_t **top, unsigned int number);
+void push_op(stack_t **top, unsigned int number);
 void pall_op(stack_t **top, unsigned int number);
 void pint_op(stack_t **top, unsigned int number);
 int executeMonty(char *input, stack_t **data, unsigned int line, FILE *file);

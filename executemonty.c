@@ -10,7 +10,7 @@
 int executeMonty(char *input, stack_t **data, unsigned int line, FILE *file)
 {
 	instruction_t operations[] = {
-				{"push", f_push}, {"pall", pall_op}, {"pint", pint_op},
+				{"push", push_op}, {"pall", pall_op}, {"pint", pint_op},
 				{"pop", pop_op},
 				{"swap", swap_op},
 				{"add", add_top},

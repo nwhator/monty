@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * f_push - add node to the stack
+ * push_op - add node to the stack
  * @top: Pointer to the top of the stack
  * @line: Line number of the script
 */
 
-void f_push(stack_t **top, unsigned int line)
+void push_op(stack_t **top, unsigned int line)
 {
 	int n, j = 0, custom_flag = 0;
 
