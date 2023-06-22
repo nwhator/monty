@@ -8,26 +8,26 @@
 */
 void add_top(stack_t **top, unsigned int line)
 {
-	stack_t *current;
-	int len = 0, sum;
+	stack_t *current; /* Declare pointer variable 'current' of type 'stack_t' */
+	int len = 0, sum; /* Declare and set two integer variables 'len' and 'sum' */
 
-	current = *top;
+	current = *top; /* Assign value pointed to by 'top' to 'current' */
 	while (current)
 	{
-		current = current->next;
-		len++;
+		current = current->next; /* Move 'current' to following node in stack */
+		len++; /* raise 'len' by 1 for each node visited */
 	}
-	if (len < 2)
+	if (len < 2) /* see if length of the stack is less than 2 */
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line);
-		fclose(interpret.file);
-		free(interpret.content);
-		free_list(*top);
-		exit(EXIT_FAILURE);
+		fclose(interpret.file); /* Close a file tied with the 'interpret' object */
+		free(interpret.content); /* Free memory allocated for 'interpret.content' */
+		free_list(*top); /* Free memory allocated for entire stack */
+		exit(EXIT_FAILURE); /* rid program with a failure status */
 	}
-	current = *top;
+	current = *top; /* Reset 'current' to top of stack */
 	sum = current->n + current->next->n;
-	current->next->n = sum;
-	*top = current->next;
-	free(current);
+	current->next->n = sum; /* set sum to 'n' value of next node in stack */
+	*top = current->next; /* Update 'top' to point to next node in stack */
+	free(current); /* Free memory allocated for prev top node */
 }
