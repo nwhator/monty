@@ -5,13 +5,13 @@
 */
 void free_list(stack_t *top)
 {
-	stack_t *sum;
+	stack_t *sum; /* Declare pointer variable 'sum' type 'stack_t' */
 
-	sum = top;
-	while (top)
+	sum = top; /* Assign value of 'top' to 'sum' */
+	while (top) /* run following block of code while 'top' is not NULL */
 	{
-		sum = top->next;
-		free(top);
-		top = sum;
+		sum = top->next; /* set 'next' member of 'top' to 'sum' */
+		free(top); /* Free memory allocated for 'top' */
+		top = sum; /* Assign the value of 'sum' to 'top' */
 	}
 }
