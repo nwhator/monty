@@ -7,9 +7,9 @@
 */
 void queue_op(stack_t **top, unsigned int line)
 {
-	(void)top;
-	(void)line;
-	interpret.lifi = 1;
+	(void)top; /* Silence compiler warning of unused variable 'top' */
+	(void)line; /* Silence compiler warning of unused variable 'line' */
+	interpret.lifi = 1; /* Set 'lifi' member of 'interpret' object to 1 */
 }
 
 /**
@@ -20,29 +20,29 @@ void queue_op(stack_t **top, unsigned int line)
 */
 void enqueue(stack_t **top, int n)
 {
-	stack_t *new, *sum;
+	stack_t *new, *sum; /* set 2 pointer variables 'new' & 'sum' type 'stack */
 
-	sum = *top;
+	sum = *top; /* set value pointed to by 'top' to 'sum' */
 	new = malloc(sizeof(stack_t));
-	if (new == NULL)
+	if (new == NULL) /* Check if memory allocation failed */
 	{
-		printf("Error\n");
+		printf("Error\n"); /* Print an error message */
 	}
-	new->n = n;
-	new->next = NULL;
-	if (sum)
+	new->n = n; /* set value 'n' to 'n' member of new node */
+	new->next = NULL; /* Set 'next' member of new node to NULL */
+	if (sum) /* Check if 'sum' is not NULL */
 	{
-		while (sum->next)
-			sum = sum->next;
+		while (sum->next) /* refine until last node of current stack */
+			sum = sum->next; /* Move 'sum' to next node */
 	}
-	if (!sum)
+	if (!sum) /* Check if 'sum' is NULL */
 	{
-		*top = new;
-		new->prev = NULL;
+		*top = new; /* Set 'new' as 1st node of stack by assign address to 'top' */
+		new->prev = NULL; /* Set 'prev' member of new node to NULL */
 	}
 	else
 	{
-		sum->next = new;
-		new->prev = sum;
+		sum->next = new; /* Set 'next' member of 'sum' to address of 'new' */
+		new->prev = sum; /* Set 'prev' member of 'new' to address of 'sum' */
 	}
 }
