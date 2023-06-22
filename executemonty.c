@@ -24,7 +24,7 @@ int executeMonty(char *input, stack_t **data, unsigned int line, FILE *file)
 				{"rotl", rotate_op},
 				{"rotr", rotate_bottom},
 				{"queue", queue_op},
-				{"data", stackTop},
+				{"stack", stackTop},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
