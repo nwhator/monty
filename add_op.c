@@ -3,7 +3,7 @@
  * add_top - adds the top two elements of the stack.
  * @top: Pointer to the stack
  * @line: Line number where the function is called
- * 
+ *
  * Description: Adds the top two elements of the stack and updates the stack
 */
 void add_top(stack_t **top, unsigned int line)
